@@ -1,3 +1,5 @@
+import { Profile } from "./Account.js"
+
 export class Blog {
     constructor(data) {
         this.id = data.id
@@ -7,5 +9,6 @@ export class Blog {
         this.tag = data.tags
         this.published = data.published
         this.creatorId = data.creatorId
+        this.creator = new Profile(data.creator)
     }
 }

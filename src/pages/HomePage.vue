@@ -1,12 +1,18 @@
 <template>
-<h1>Hello World!</h1>
+<div class="container">
+  <div v-for="b in blogs" class="row">
+    <BlogPost :blog="b" />
+    </div>
+  </div>
+
 </template>
 
 <script>
 import { logger } from '../utils/Logger.js';
 import Pop from '../utils/Pop.js';
 import {blogsService} from '../services/BlogsService.js'
-import { onMounted } from 'vue';
+import { onMounted, computed } from 'vue';
+import { AppState } from '../AppState.js';
 
 export default {
   setup() {
@@ -23,7 +29,9 @@ export default {
       getBlogs()
     })
 
-    return {}
+    return {
+      blogs: computed(() => AppState.blogs)
+    }
   }
 }
 </script>
