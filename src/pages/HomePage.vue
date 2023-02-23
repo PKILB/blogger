@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-  <div v-for="b in blogs" class="row">
+  <div v-for="b in blogs" class="row my-4">
     <BlogPost :blog="b" />
     </div>
   </div>
